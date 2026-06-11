@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XIMAGO OUTLET – Tiendas en Linares y Andújar</title>
+  <meta name="description" content="XIMAGO OUTLET, tus tiendas outlet en Linares (C/ Isaac Peral 5) y Andújar (C/ 12 de Agosto 6). Productos de calidad a precios outlet. Llámanos o visítanos." />
+  <meta name="keywords" content="ximago, ximago outlet, outlet linares, outlet andujar, tienda outlet jaen, ximago linares, ximago andujar" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ximago.web.app" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="XIMAGO OUTLET – Linares y Andújar" />
+  <meta property="og:description" content="Tus tiendas outlet en Linares y Andújar. Calidad a precios inmejorables." />
+  <meta property="og:url" content="https://ximago.web.app" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ximago.web.app/images/logo-banner.png" />
+
+  <link rel="icon" type="image/png" href="images/logo-transparent.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #FF6B00;
+      --orange-light: #FF8C3A;
+      --orange-dark: #CC5500;
+      --black: #0d0d0d;
+      --dark: #1a1a1a;
+      --card: #222222;
+      --white: #ffffff;
+      --gray: #aaaaaa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      padding: 14px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(13,13,13,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,107,0,0.2);
+      transition: all 0.3s;
+    }
+    nav.scrolled { padding: 10px 40px; background: rgba(13,13,13,0.97); }
+    .nav-logo { height: 48px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--white); text-decoration: none; font-size: 0.85rem;
+      font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(255,107,0,0.12) 0%, transparent 70%);
+      animation: pulse-bg 4s ease-in-out infinite;
+    }
+    @keyframes pulse-bg {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50%       { opacity: 1;   transform: scale(1.05); }
+    }
+
+    .hero-icon {
+      width: 160px; height: 160px; object-fit: contain;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px rgba(255,107,0,0.5));
+      position: relative; z-index: 1;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-14px); }
+    }
+
+    .hero-logo {
+      width: min(480px, 85vw); margin: 24px 0 16px;
+      position: relative; z-index: 1;
+      animation: fade-up 0.9s ease both;
+      animation-delay: 0.2s;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--gray); font-weight: 300;
+      letter-spacing: 3px; text-transform: uppercase;
+      position: relative; z-index: 1;
+      animation: fade-up 0.9s ease both;
+      animation-delay: 0.4s;
+    }
+    .hero-tagline span { color: var(--orange); font-weight: 600; }
+
+    .hero-cta {
+      margin-top: 36px; position: relative; z-index: 1;
+      animation: fade-up 0.9s ease both;
+      animation-delay: 0.6s;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700; font-size: 0.9rem;
+      letter-spacing: 2px; text-transform: uppercase;
+      text-decoration: none; border-radius: 4px;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 0 0 rgba(255,107,0,0);
+    }
+    .btn-primary:hover {
+      background: var(--orange-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255,107,0,0.4);
+    }
+
+
+    /* ── SECTIONS ── */
+    section { padding: 90px 20px; }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .section-title span { color: var(--orange); }
+    .section-line {
+      width: 60px; height: 3px;
+      background: var(--orange);
+      margin: 0 auto 60px;
+      border-radius: 2px;
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      max-width: 700px; margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem; line-height: 1.8;
+      color: #cccccc;
+    }
+    .about-text strong { color: var(--orange); }
+
+    /* ── STORES ── */
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 900px; margin: 0 auto;
+    }
+    .store-card {
+      background: var(--card);
+      border: 1px solid rgba(255,107,0,0.15);
+      border-radius: 12px;
+      padding: 36px 32px;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .store-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-light));
+    }
+    .store-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,107,0,0.5);
+      box-shadow: 0 20px 40px rgba(255,107,0,0.1);
+    }
+    .store-city {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem; letter-spacing: 2px;
+      color: var(--orange); margin-bottom: 20px;
+    }
+    .store-info { display: flex; flex-direction: column; gap: 14px; }
+    .store-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 0.95rem; color: #cccccc;
+    }
+    .store-row i {
+      color: var(--orange); font-size: 1rem;
+      margin-top: 2px; min-width: 18px;
+    }
+    .store-row a {
+      color: #cccccc; text-decoration: none;
+      transition: color 0.3s;
+    }
+    .store-row a:hover { color: var(--orange); }
+
+    .schedule-box {
+      background: rgba(255,107,0,0.07);
+      border: 1px solid rgba(255,107,0,0.2);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 4px;
+    }
+    .schedule-box .day { font-weight: 600; color: var(--white); font-size: 0.85rem; margin-bottom: 4px; }
+    .schedule-box .time { color: var(--orange-light); font-size: 0.9rem; }
+
+
+    /* ── CONTACT ── */
+    .contact-cards {
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 20px;
+      max-width: 700px; margin: 0 auto;
+    }
+    .contact-card {
+      background: var(--card);
+      border: 1px solid rgba(255,107,0,0.15);
+      border-radius: 12px;
+      padding: 28px 32px;
+      text-align: center; min-width: 240px;
+      transition: all 0.3s;
+    }
+    .contact-card:hover {
+      border-color: var(--orange);
+      box-shadow: 0 0 20px rgba(255,107,0,0.15);
+    }
+    .contact-card i { font-size: 2rem; color: var(--orange); margin-bottom: 10px; display: block; }
+    .contact-card .label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gray); margin-bottom: 6px; }
+    .contact-card .value { font-size: 1rem; font-weight: 600; }
+    .contact-card a { color: var(--white); text-decoration: none; transition: color 0.3s; }
+    .contact-card a:hover { color: var(--orange); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080808;
+      border-top: 1px solid rgba(255,107,0,0.15);
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--gray); font-size: 0.85rem;
+    }
+    footer span { color: var(--orange); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 12px 20px; }
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 0.75rem; }
+    }
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <img src="images/logo-banner.png" alt="Ximago Outlet" class="nav-logo" />
+    <ul class="nav-links">
+      <li><a href="#tiendas">Tiendas</a></li>
+      <li><a href="#horario">Horario</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="images/logo-transparent.png" alt="Ximago" class="hero-icon" />
+    <img src="images/logo-banner.png" alt="Ximago Outlet" class="hero-logo" />
+    <p class="hero-tagline">Tu tienda <span>outlet</span> de confianza</p>
+    <div class="hero-cta">
+      <a href="#tiendas" class="btn-primary">Ver nuestras tiendas</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="section-title reveal">¿Quiénes <span>somos</span>?</h2>
+    <div class="section-line reveal"></div>
+    <p class="about-text reveal">
+      En <strong>XIMAGO OUTLET</strong> encontrarás una amplia selección de productos
+      a precios de outlet sin renunciar a la calidad. Dos tiendas físicas en
+      <strong>Linares</strong> y <strong>Andújar</strong>, listas para atenderte
+      con la mejor experiencia de compra.
+    </p>
+  </section>
+
+  <!-- TIENDAS -->
+  <section id="tiendas" style="background: var(--dark);">
+    <h2 class="section-title reveal">Nuestras <span>Tiendas</span></h2>
+    <div class="section-line reveal"></div>
+    <div class="stores-grid">
+
+      <!-- LINARES -->
+      <div class="store-card reveal">
+        <div class="store-city">Linares</div>
+        <div class="store-info">
+          <div class="store-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>C/ Isaac Peral 5, Linares (Jaén)</span>
+          </div>
+          <div class="store-row">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+34653173796">+34 653 17 37 96</a>
+          </div>
+          <div class="store-row">
+            <i class="fa-solid fa-clock"></i>
+            <div class="schedule-box">
+              <div class="day">Lunes – Sábado</div>
+              <div class="time">10:00 – 14:00 &nbsp;|&nbsp; 17:30 – 21:30</div>
+            </div>
+          </div>
+          <div class="store-row">
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.me/34653173796" target="_blank">Escríbenos por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ANDÚJAR -->
+      <div class="store-card reveal">
+        <div class="store-city">Andújar</div>
+        <div class="store-info">
+          <div class="store-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>C/ 12 de Agosto 6, Andújar (Jaén)</span>
+          </div>
+          <div class="store-row">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+34635607666">+34 635 60 76 66</a>
+          </div>
+          <div class="store-row">
+            <i class="fa-solid fa-clock"></i>
+            <div class="schedule-box">
+              <div class="day">Lunes – Sábado</div>
+              <div class="time">10:00 – 14:00 &nbsp;|&nbsp; 17:30 – 21:30</div>
+            </div>
+          </div>
+          <div class="store-row">
+            <i class="fa-brands fa-whatsapp"></i>
+            <a href="https://wa.me/34635607666" target="_blank">Escríbenos por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HORARIO VISUAL -->
+  <section id="horario">
+    <h2 class="section-title reveal">Nuestro <span>Horario</span></h2>
+    <div class="section-line reveal"></div>
+    <div style="max-width:500px; margin:0 auto; display:flex; flex-direction:column; gap:12px;">
+      <div class="store-card reveal" style="text-align:center; padding:28px;">
+        <i class="fa-solid fa-sun" style="font-size:2rem; color:var(--orange); margin-bottom:12px; display:block;"></i>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:2px; margin-bottom:6px;">Mañana</div>
+        <div style="font-size:1.6rem; font-weight:700; color:var(--orange);">10:00 – 14:00</div>
+      </div>
+      <div class="store-card reveal" style="text-align:center; padding:28px;">
+        <i class="fa-solid fa-moon" style="font-size:2rem; color:var(--orange); margin-bottom:12px; display:block;"></i>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:2px; margin-bottom:6px;">Tarde</div>
+        <div style="font-size:1.6rem; font-weight:700; color:var(--orange);">17:30 – 21:30</div>
+      </div>
+      <p style="text-align:center; color:var(--gray); font-size:0.85rem; margin-top:8px;" class="reveal">
+        Horario aplicable en ambas tiendas · Lunes a Sábado
+      </p>
+    </div>
+  </section>
+
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2 class="section-title reveal"><span>Contacto</span></h2>
+    <div class="section-line reveal"></div>
+    <div class="contact-cards">
+      <div class="contact-card reveal">
+        <i class="fa-solid fa-phone"></i>
+        <div class="label">Linares</div>
+        <div class="value"><a href="tel:+34653173796">+34 653 17 37 96</a></div>
+      </div>
+      <div class="contact-card reveal">
+        <i class="fa-solid fa-phone"></i>
+        <div class="label">Andújar</div>
+        <div class="value"><a href="tel:+34635607666">+34 635 60 76 66</a></div>
+      </div>
+      <div class="contact-card reveal">
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="label">Linares</div>
+        <div class="value">C/ Isaac Peral 5</div>
+      </div>
+      <div class="contact-card reveal">
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="label">Andújar</div>
+        <div class="value">C/ 12 de Agosto 6</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <span>XIMAGO OUTLET</span> · Todos los derechos reservados</p>
+    <p style="margin-top:6px; font-size:0.78rem;">Linares &amp; Andújar · Jaén</p>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
